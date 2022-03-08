@@ -40,6 +40,12 @@ echo Operation Completed
 
 echo ------------------------------------------------------------
 
+echo Updating the Reset-Station.sh Script
+cp /home/pi/bootloader/bootloader.sh /home/pi/Desktop/Reset-Station.sh
+echo Operation Completed
+
+echo ------------------------------------------------------------
+
 echo Run the boot script
 bash /home/pi/bootloader/bootGalacticStation.sh
 echo Operation Completed

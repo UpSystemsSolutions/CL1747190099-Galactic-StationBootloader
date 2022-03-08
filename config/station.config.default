@@ -1,0 +1,4 @@
+StationID=1
+CoreAddress=192.168.86.241
+CorePort=80
+CoreProtocol=http

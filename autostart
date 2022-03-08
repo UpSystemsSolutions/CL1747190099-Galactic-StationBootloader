@@ -1,4 +1,4 @@
+#Galactic Boot AutoStart v1.0
 @lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
 @bash /home/pi/bootloader/bootloader.sh
-#Hello!

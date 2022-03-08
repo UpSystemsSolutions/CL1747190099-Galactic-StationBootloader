@@ -1,4 +1,15 @@
 #Galactic Boot AutoStart v1.0
+
+#Setup the desktop interface
 @lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
+
+#disable screensaver and lockscreen
+@xscreensaver -no-splash
+@xset s 0 0
+@xset s noblank
+@xset s noexpose
+@xset dpms 0 0 0
+
+#Start Galactic Station Bootloader
 @bash /home/pi/bootloader/bootloader.sh

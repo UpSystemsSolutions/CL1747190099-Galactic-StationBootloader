@@ -22,6 +22,9 @@ echo Cleaning up...
 rm -rf /home/pi/bltmp
 echo Operation Completed
 
+echo Updating the autostart code
+mv /home/pi/bootloader/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
+
 echo Run the boot script
 bash /home/pi/bootloader/bootGalacticStation.sh
 echo Operation Completed

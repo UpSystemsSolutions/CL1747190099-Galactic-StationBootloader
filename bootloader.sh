@@ -11,7 +11,7 @@ rm -rf /home/pi/bootloader
 echo Operation Completed
 
 echo downloading updated code
-git clone https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git /home/pi/bootloarder
+git clone https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git /home/pi/bootloader
 echo Operation Completed
 
 echo Moving the config files from the temporary workspace to the update bootloader workspace

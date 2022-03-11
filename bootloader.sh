@@ -17,7 +17,7 @@ echo Operation Completed
 echo ------------------------------------------------------------
 
 echo downloading updated code
-git clone https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git /home/pi/bootloader
+git clone -b dev https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git /home/pi/bootloader
 echo Operation Completed
 
 echo ------------------------------------------------------------

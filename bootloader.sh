@@ -29,7 +29,7 @@ echo Operation Completed
 echo ------------------------------------------------------------
 
 echo Cleaning up...
-#rm -rf /home/pi/bltmp
+rm -rf /home/pi/bltmp
 echo Operation Completed
 
 echo ------------------------------------------------------------

@@ -1,3 +1,6 @@
+. /home/pi/bootloader/config/station.config
+StationDashboardURL="$CoreProtocol://$CoreAddress:$CorePort/#/operator/$StationID"
+
 echo Creating temporary workspace
 mkdir /home/pi/bltmp
 echo Operation Completed
@@ -17,7 +20,7 @@ echo Operation Completed
 echo ------------------------------------------------------------
 
 echo downloading updated code
-git clone -b dev https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git /home/pi/bootloader
+git clone -b $Branch https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git /home/pi/bootloader
 echo Operation Completed
 
 echo ------------------------------------------------------------
@@ -29,7 +32,7 @@ echo Operation Completed
 echo ------------------------------------------------------------
 
 echo Cleaning up...
-#rm -rf /home/pi/bltmp
+rm -rf /home/pi/bltmp
 echo Operation Completed
 
 echo ------------------------------------------------------------

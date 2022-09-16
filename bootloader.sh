@@ -23,7 +23,7 @@ if [ -d "$TEMP" ]; then
     cp $CONFIG_LIVE $TEMP
 
     echo "Moving the new bootloader to the place"
-    cp -r $TEMP $CURRENT
+    cp -r $TEMP/* $CURRENT
 
     echo "Updating AutoStart File "
     cp $AUTOSTART_HOME $AUTOSTART_DEST

@@ -7,6 +7,9 @@ RESET_DEST=/home/pi/Desktop/Reset-Station.sh
 STARTER=/home/pi/bootloader/bootGalacticStation.sh
 CONFIG_LIVE=/home/pi/bootloader/config/*
 
+echo "Cleaning up temp files"
+rm -rf $TEMP
+
 echo "downloading updated code to temp"
 git clone -b prod https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git $TEMP
 

@@ -10,3 +10,4 @@
 @xset dpms 0 0 0
 #Start Galactic Station Bootloader
 @bash /home/pi/bootloader/bootloader.sh
+@python3 /home/pi/rpi-power-monitor/power-monitor.py terminal

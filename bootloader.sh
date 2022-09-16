@@ -1,54 +1,39 @@
-. /home/pi/bootloader/config/station.config
-StationDashboardURL="$CoreProtocol://$CoreAddress:$CorePort/#/operator/$StationID"
+TEMP=/home/pi/bootloaderTMP
+CURRENT=/home/pi/bootloader
+AUTOSTART_HOME=/home/pi/bootloader/autostart
+AUTOSTART_DEST=/home/pi/.config/lxsession/LXDE-pi/autostart
+RESET_HOME=/home/pi/bootloader/bootloader.sh
+RESET_DEST=/home/pi/Desktop/Reset-Station.sh
+STARTER=/home/pi/bootloader/bootGalacticStation.sh
+CONFIG_LIVE=/home/pi/bootloader/config/*
 
-echo Creating temporary workspace
-mkdir /home/pi/bltmp
-echo Operation Completed
+echo "downloading updated code to temp"
+git clone -b prod https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git $TEMP
 
-echo ------------------------------------------------------------
+echo "check if download was successfull"
 
-echo Moving the config files to the temporary workspace
-mv /home/pi/bootloader/config/* /home/pi/bltmp
-echo Operation Completed
 
-echo ------------------------------------------------------------
+if [ -d "$TEMP" ]; then
+    echo "$TEMP exists."
 
-echo Removing the old code
-rm -rf /home/pi/bootloader
-echo Operation Completed
+    echo "Moving the config files to the temporary workspace"
+    cp $CONFIG_LIVE $TEMP
 
-echo ------------------------------------------------------------
+    echo "Moving the new bootloader to the place"
+    cp -r $TEMP $CURRENT
 
-echo downloading updated code
-git clone -b $Branch https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git /home/pi/bootloader
-echo Operation Completed
+    echo "Updating AutoStart File "
+    cp $AUTOSTART_HOME $AUTOSTART_DEST
 
-echo ------------------------------------------------------------
+    echo "Updating reset script"
+    cp $RESET_HOME $RESET_DEST
 
-echo Moving the config files from the temporary workspace to the update bootloader workspace
-mv /home/pi/bltmp/* /home/pi/bootloader/config
-echo Operation Completed
+    echo "Run Bootscript"
+    bash $STARTER
 
-echo ------------------------------------------------------------
-
-echo Cleaning up...
-rm -rf /home/pi/bltmp
-echo Operation Completed
-
-echo ------------------------------------------------------------
-
-echo Updating the autostart code
-mv /home/pi/bootloader/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
-echo Operation Completed
-
-echo ------------------------------------------------------------
-
-echo Updating the Reset-Station.sh Script
-cp /home/pi/bootloader/bootloader.sh /home/pi/Desktop/Reset-Station.sh
-echo Operation Completed
-
-echo ------------------------------------------------------------
-
-echo Run the boot script
-bash /home/pi/bootloader/bootGalacticStation.sh
-echo Operation Completed
+    echo "Removing temp files"
+    rm -rf $TEMP
+    
+else 
+    echo "$TEMP does not exist."
+fi

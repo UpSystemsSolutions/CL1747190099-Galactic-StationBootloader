@@ -8,7 +8,7 @@ STARTER=/home/pi/bootloader/bootGalacticStation.sh
 CONFIG_LIVE=/home/pi/bootloader/config/*
 
 echo "downloading updated code to temp"
-git clone -b dev https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git $TEMP
+git clone -b prod https://github.com/UpSystemsSolutions/CL1747190099-Galactic-StationBootloader.git $TEMP
 
 echo "check if download was successfull"
 

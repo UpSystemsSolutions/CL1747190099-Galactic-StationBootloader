@@ -1,5 +1,5 @@
 . /home/pi/bootloader/config/station.config
 StationDashboardURL="$CoreProtocol://$CoreAddress:$CorePort/#/operator/$StationID"
 
-firefox $StationDashboardURL
+chromium-browser --incognito $StationDashboardURL
 #echo $StationDashboardURL
